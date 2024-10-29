@@ -9,16 +9,7 @@
           "displayName": "inference_table_name",
           "keyword": "inference_table_name",
           "dataType": "STRING",
-          "defaultSelection": {
-            "values": {
-              "dataType": "STRING",
-              "values": [
-                {
-                  "value": "`archika`.`default`.`archika-gpt-gateway_payload`"
-                }
-              ]
-            }
-          }
+          "defaultSelection": {}
         }
       ]
     },
@@ -44,16 +35,7 @@
           "displayName": "Endpoint Name",
           "keyword": "endpoint_name",
           "dataType": "STRING",
-          "defaultSelection": {
-            "values": {
-              "dataType": "STRING",
-              "values": [
-                {
-                  "value": "archika-gpt"
-                }
-              ]
-            }
-          }
+          "defaultSelection": {}
         }
       ]
     },
@@ -261,12 +243,6 @@
                       "expression": "SUM(`token_total_count`)"
                     }
                   ],
-                  "parameterValues": [
-                    {
-                      "keyword": "endpoint_name",
-                      "selection": {}
-                    }
-                  ],
                   "disaggregated": false
                 }
               }
@@ -318,7 +294,7 @@
         {
           "widget": {
             "name": "85b1cb93",
-            "textbox_spec": "# [EXAMPLE] AI Gateway Dashboard\n\n**This dashboard demonstrates how to visualize insights from model serving endpoints by leveraging usage tracking and inference tables provided by AI Gateway.** The usage tracking data is stored in the system table `system.serving.endpoint_usage`, which is accessible to admins by default. For endpoint metadata, `system.serving.endpoint_usage` is joined with `system.serving.served_entities`. Inference tables for each endpoint are located in a custom table location defined by the endpoint creator within the Unity Catalog."
+            "textbox_spec": "# [EXAMPLE] AI Gateway Dashboard\n\n**This dashboard is an example demonstration of how to visualize insights from AI Gateway-enabled endpoints by leveraging usage tracking and inference tables.** The usage tracking data is stored in the system table `system.serving.endpoint_usage`. To attach endpoint metadata, `system.serving.endpoint_usage` is joined with `system.serving.served_entities`. Inference tables for each endpoint are located in a custom table location defined by the endpoint creator within the Unity Catalog."
           },
           "position": {
             "x": 0,
@@ -1176,7 +1152,7 @@
                     "dataType": "STRING",
                     "values": [
                       {
-                        "value": "`catalog`.`schema`.`table-name`"
+                        "value": "`your_catalog`.`your_schema`.`your_table-name`"
                       }
                     ]
                   }
@@ -1532,21 +1508,6 @@
                       "expression": "`top_user`"
                     }
                   ],
-                  "parameterValues": [
-                    {
-                      "keyword": "inference_table",
-                      "selection": {
-                        "values": {
-                          "dataType": "STRING",
-                          "values": [
-                            {
-                              "value": "`archika`.`default`.`archika-gpt-gateway_payload`"
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  ],
                   "disaggregated": true
                 }
               }
@@ -1776,7 +1737,7 @@
         {
           "widget": {
             "name": "b2e59460",
-            "textbox_spec": "#### NOTE: This section requires a user-defined endpoint name and inference table location to populate the charts."
+            "textbox_spec": "#### IMPORTANT NOTE: This section requires a user-defined endpoint name and/or inference table location to populate the charts."
           },
           "position": {
             "x": 0,
